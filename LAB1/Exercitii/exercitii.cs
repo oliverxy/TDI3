@@ -37,44 +37,40 @@ internal class Lab1
     private static void Ex1()
     {
         // Console.WriteLine("1. Calcul volum dreptunghi paralelipipedic");
-        uint nLungime, nLatime, nInaltime;
         Console.WriteLine("Lungime baza:");
-        nLungime = uint.Parse(Console.ReadLine());
+        uint nLungime = uint.Parse(Console.ReadLine());
         Console.WriteLine("Latime baza:");
-        nLatime = uint.Parse(Console.ReadLine());
+        uint nLatime = uint.Parse(Console.ReadLine());
         Console.WriteLine("Inaltime:");
-        nInaltime = uint.Parse(Console.ReadLine());
+        uint nInaltime = uint.Parse(Console.ReadLine());
         Console.WriteLine("Volum dreptunghi paralelipipedic:" + nLungime * nLatime * nInaltime);
     }
 
     private static void Ex2()
     {
         //Console.WriteLine("2. Calcul media aritmetica 3 numere");
-        uint nNr1, nNr2, nNr3;
         Console.WriteLine("Introducere numar 1:");
-        nNr1 = uint.Parse(Console.ReadLine());
+        uint nNr1 = uint.Parse(Console.ReadLine());
         Console.WriteLine("Introducere numar 2:");
-        nNr2 = uint.Parse(Console.ReadLine());
+        uint nNr2 = uint.Parse(Console.ReadLine());
         Console.WriteLine("Introducere numar 3:");
-        nNr3 = uint.Parse(Console.ReadLine());
+        uint nNr3 = uint.Parse(Console.ReadLine());
         Console.WriteLine("Media aritmtica a celor 3 numere este:" + (nNr1 + nNr2 + nNr3) / 3);
     }
 
     private static void Ex3()
     {
         //Console.WriteLine("3. Afisare ultima cifra a unui numar");
-        int nNr;
         Console.WriteLine("Introducere numarul:");
-        nNr = int.Parse(Console.ReadLine());
+        int nNr = int.Parse(Console.ReadLine());
         Console.WriteLine("Ultima cifra a numarului "+nNr+" este " + nNr % 10);
     }
 
     private static void Ex4()
     {
         //Console.WriteLine("4. Afisare semnul unui numar");
-        int nNr;
         Console.WriteLine("Introducere numarul:");
-        nNr = int.Parse(Console.ReadLine());
+        int nNr = int.Parse(Console.ReadLine());
         if (nNr == 0)
         { 
             Console.WriteLine(nNr);
@@ -92,11 +88,10 @@ internal class Lab1
     private static void Ex5()
     {
         //Console.WriteLine("5. Afisare 2 numare in ordine crescatoare");
-        int nNr1, nNr2;
         Console.WriteLine("Introducere primul numar:");
-        nNr1 = int.Parse(Console.ReadLine());
+        int nNr1 = int.Parse(Console.ReadLine());
         Console.WriteLine("Introducere al doilea numar:");
-        nNr2 = int.Parse(Console.ReadLine());
+        int nNr2 = int.Parse(Console.ReadLine());
         if (nNr1 < nNr2)
         {
             Console.WriteLine(nNr1 +" " + nNr2);
@@ -110,14 +105,13 @@ internal class Lab1
     private static void Ex6()
     {
         //Console.WriteLine("6. Afisare 3 numare in ordine crescatoare");
-        int nNr1, nNr2, nNr3, nNr0;
         Console.WriteLine("Introducere primul numar:");
-        nNr1 = int.Parse(Console.ReadLine());
+        int nNr1 = int.Parse(Console.ReadLine());
         Console.WriteLine("Introducere al doilea numar:");
-        nNr2 = int.Parse(Console.ReadLine());
+        int nNr2 = int.Parse(Console.ReadLine());
         Console.WriteLine("Introducere al treilea numar:");
-        nNr3 = int.Parse(Console.ReadLine());
-        nNr0 = Math.Max(nNr1,Math.Max(nNr2,nNr3));
+        int nNr3 = int.Parse(Console.ReadLine());
+        int nNr0 = Math.Max(nNr1,Math.Max(nNr2,nNr3));
         if (nNr1 == nNr0)
         {
             if (nNr2 < nNr3)
@@ -147,9 +141,8 @@ internal class Lab1
     private static void Ex7()
     {
         //Console.WriteLine("7. Afisare daca un numar este par sau impar");
-        int nNr;
         Console.WriteLine("Introducere numarul:");
-        nNr = int.Parse(Console.ReadLine());
+        int nNr = int.Parse(Console.ReadLine());
         if (nNr % 2 == 0)
         {
             Console.WriteLine("Numarul este par.");
@@ -164,11 +157,10 @@ internal class Lab1
     private static void Ex8()
     {
         //Console.WriteLine("8. Interschimba 2 numere intregi");
-        int nNr1, nNr2;
         Console.WriteLine("Introducere primul numar:");
-        nNr1 = int.Parse(Console.ReadLine());
+        int nNr1 = int.Parse(Console.ReadLine());
         Console.WriteLine("Introducere al doilea numar:");
-        nNr2 = int.Parse(Console.ReadLine());
+        int nNr2 = int.Parse(Console.ReadLine());
         (nNr1, nNr2) = (nNr2, nNr1);
         Console.WriteLine(nNr1 + " " + nNr2);
     }
@@ -177,9 +169,8 @@ internal class Lab1
     private static void Ex9()
     {
         //Console.WriteLine("9. Afisare text numar");
-        int nNr;
         Console.WriteLine("Introducere numarul:");
-        nNr = int.Parse(Console.ReadLine());
+        int nNr = int.Parse(Console.ReadLine());
         string txt;
         switch (nNr) 
         {
