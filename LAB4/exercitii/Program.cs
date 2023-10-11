@@ -8,7 +8,7 @@ internal class Program
         Console.WriteLine($"Volumul unui dulap {dulap.GetDescription} = {dulap.GetVolum}");
 
         Masina masina = new("Dacia", "TM01MAI", 1300);
-        Console.WriteLine("Model masina " + masina.GetDescription);
+        Console.WriteLine($"Model masina  {masina.GetDescription}");
         masina.AdaugaPasager("Popescu Ion");
         masina.AdaugaPasager("Popescu Maria");
         masina.AdaugaPasager("Popescu Gheorhe");
