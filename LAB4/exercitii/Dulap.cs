@@ -10,13 +10,13 @@ public class Dulap
     private int Latime { get; set; }
     private int Lungime { get; set; }
     private int Adancime { get; set; }
-
+    
     public Dulap(int lungime, int latime, int adancime )
     {
         Lungime = lungime;
         Latime = latime;
         Adancime = adancime;
     }
-    public int Volum => Lungime * Latime * Adancime;
+    public int GetVolum => Lungime * Latime * Adancime;
     public string GetDescription => $"{Lungime} /{Latime} / {Adancime}";
 }

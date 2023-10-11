@@ -5,7 +5,7 @@ internal class Program
     private static void Main(string[] args)
     {
         Dulap dulap = new(80, 40, 30);
-        Console.WriteLine("Volumul unui dulap "+dulap.GetDescription+ " = "+dulap.Volum);
+        Console.WriteLine($"Volumul unui dulap {dulap.GetDescription} = {dulap.GetVolum}");
 
         Masina masina = new("Dacia", "TM01MAI", 1300);
         Console.WriteLine("Model masina " + masina.GetDescription);
