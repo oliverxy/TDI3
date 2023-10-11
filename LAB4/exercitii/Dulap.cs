@@ -18,5 +18,5 @@ public class Dulap
         Adancime = adancime;
     }
     public int Volum => Lungime * Latime * Adancime;
-    public string GetDescription => Lungime + " / " + Latime + " / " + Adancime;
+    public string GetDescription => $"{Lungime} /{Latime} / {Adancime}";
 }

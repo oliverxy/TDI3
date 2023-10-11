@@ -1,11 +1,13 @@
-﻿public class Masina
+﻿using System.Runtime.CompilerServices;
+
+public class Masina
 {
     //Auto-implemented Property
     private string Marca { get; set; }
     private string NumarDeInmatriculare { get; set; }
     private int CapacitateCilindrica { get; set; }
-    
-    public readonly List<string> ListaPasageri = new List<string>();
+
+    private List<string> ListaPasageri { get; set; } = new List<string>();
 
     public Masina(string marca, string numarDeInmatriculare, int capacitateaCilindrica)
     {
@@ -13,21 +15,22 @@
         NumarDeInmatriculare = numarDeInmatriculare;
         CapacitateCilindrica = capacitateaCilindrica;
     }
-    
-    public static void AdaugaPasager(string pasager, List<string> ListaPasageri)
+
+    public void AdaugaPasager(string pasager)
     {
         ListaPasageri.Add(pasager);
+        
     }
-    
-    public static void StergePasager(string pasager, List<string> ListaPasageri)
+
+    public void StergePasager(string pasager)
     {
-        if (ExistaPasager(pasager, ListaPasageri) != "")
+        if (ExistaPasager(pasager) != "")
         {
-            ListaPasageri.Remove(pasager) ;
+            ListaPasageri.Remove(pasager);
         }
     }
-    
-    public static string ExistaPasager(string pasager, List<string> ListaPasageri)
+
+    public string ExistaPasager(string pasager)
     {
         if (ListaPasageri.IndexOf(pasager) == -1)
         {
@@ -36,15 +39,15 @@
         return pasager;
     }
 
-    public static string GetPasageri(List<string> ListaPasageri)
+    public string GetPasageri()
     {
         string Result = "";
-        foreach (var item in ListaPasageri) 
-        { 
-            Result += item+ "\n"; 
+        foreach (var item in ListaPasageri)
+        {
+            Result += item + "\n";
         }
         return Result;
     }
 
-    public string GetDescription => Marca + " , " + NumarDeInmatriculare + " , " + CapacitateCilindrica + "cmc";
+    public string GetDescription => $"{Marca} / {NumarDeInmatriculare} / {CapacitateCilindrica}";
 }

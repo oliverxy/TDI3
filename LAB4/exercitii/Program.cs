@@ -9,16 +9,16 @@ internal class Program
 
         Masina masina = new("Dacia", "TM01MAI", 1300);
         Console.WriteLine("Model masina " + masina.GetDescription);
-        Masina.AdaugaPasager("Popescu Ion", masina.ListaPasageri);
-        Masina.AdaugaPasager("Popescu Maria", masina.ListaPasageri);
-        Masina.AdaugaPasager("Popescu Gheorhe", masina.ListaPasageri);
-        Console.WriteLine(Masina.GetPasageri(masina.ListaPasageri));
+        masina.AdaugaPasager("Popescu Ion");
+        masina.AdaugaPasager("Popescu Maria");
+        masina.AdaugaPasager("Popescu Gheorhe");
+        Console.WriteLine(masina.GetPasageri());
 
         string TestPasager = "Popescu Maria";
-        Masina.StergePasager(TestPasager, masina.ListaPasageri);
+        masina.StergePasager(TestPasager);
 
 
-        Console.WriteLine("Pasagerul " + TestPasager + (Masina.ExistaPasager(TestPasager, masina.ListaPasageri) != "" ? "" : " NU mai") + " exista");
+        Console.WriteLine("Pasagerul " + TestPasager + (masina.ExistaPasager(TestPasager) != "" ? "" : " NU mai") + " exista");
 
 
 
