@@ -1,6 +1,4 @@
-﻿using System;
-
-internal class Lab1
+﻿internal class Lab1
 {
     private static void Main()
     {
@@ -63,7 +61,7 @@ internal class Lab1
         //Console.WriteLine("3. Afisare ultima cifra a unui numar");
         Console.WriteLine("Introducere numarul:");
         int nNr = int.Parse(Console.ReadLine());
-        Console.WriteLine("Ultima cifra a numarului "+nNr+" este " + nNr % 10);
+        Console.WriteLine("Ultima cifra a numarului " + nNr + " este " + nNr % 10);
     }
 
     private static void Ex4()
@@ -72,16 +70,16 @@ internal class Lab1
         Console.WriteLine("Introducere numarul:");
         int nNr = int.Parse(Console.ReadLine());
         if (nNr == 0)
-        { 
+        {
             Console.WriteLine(nNr);
         }
         else if (nNr <= 0)
-        { 
-            Console.WriteLine("-"); 
+        {
+            Console.WriteLine("-");
         }
-        else 
-        { 
-            Console.WriteLine("+"); 
+        else
+        {
+            Console.WriteLine("+");
         }
     }
 
@@ -94,7 +92,7 @@ internal class Lab1
         int nNr2 = int.Parse(Console.ReadLine());
         if (nNr1 < nNr2)
         {
-            Console.WriteLine(nNr1 +" " + nNr2);
+            Console.WriteLine(nNr1 + " " + nNr2);
         }
         else
         {
@@ -111,7 +109,7 @@ internal class Lab1
         int nNr2 = int.Parse(Console.ReadLine());
         Console.WriteLine("Introducere al treilea numar:");
         int nNr3 = int.Parse(Console.ReadLine());
-        int nNr0 = Math.Max(nNr1,Math.Max(nNr2,nNr3));
+        int nNr0 = Math.Max(nNr1, Math.Max(nNr2, nNr3));
         if (nNr1 == nNr0)
         {
             if (nNr2 < nNr3)
@@ -122,7 +120,8 @@ internal class Lab1
         else if (nNr2 == nNr0)
         {
             (nNr1, nNr2) = (nNr2, nNr1);
-            if (nNr3 > nNr2)            {
+            if (nNr3 > nNr2)
+            {
                 (nNr2, nNr3) = (nNr3, nNr2);
             }
         }
@@ -172,7 +171,7 @@ internal class Lab1
         Console.WriteLine("Introducere numarul:");
         int nNr = int.Parse(Console.ReadLine());
         string txt;
-        switch (nNr) 
+        switch (nNr)
         {
             case 1: txt = "unu"; break;
             case 2: txt = "doi"; break;
@@ -180,7 +179,7 @@ internal class Lab1
             case 5: txt = "cinci"; break;
             case 8: txt = "opt"; break;
             default: txt = "neidentificat"; break;
-        }  
+        }
         Console.WriteLine(nNr + " => " + txt);
     }
 }
