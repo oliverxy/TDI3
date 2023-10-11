@@ -18,7 +18,8 @@ internal class Program
         masina.StergePasager(TestPasager);
 
 
-        Console.WriteLine("Pasagerul " + TestPasager + (masina.ExistaPasager(TestPasager) != "" ? "" : " NU mai") + " exista");
+        Console.WriteLine("Pasagerul " + TestPasager + (masina.ExistaPasager(TestPasager) ? "" : " NU mai") + " exista");
+        Console.WriteLine(masina.GetPasageri());
 
 
 

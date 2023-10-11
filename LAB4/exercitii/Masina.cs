@@ -1,53 +1,52 @@
 ﻿using System.Runtime.CompilerServices;
+using System.Text;
 
 public class Masina
 {
     //Auto-implemented Property
-    private string Marca { get; set; }
-    private string NumarDeInmatriculare { get; set; }
-    private int CapacitateCilindrica { get; set; }
+    private string marca { get; set; }
+    private string numarDeInmatriculare { get; set; }
+    private int capacitateCilindrica { get; set; }
 
     private List<string> ListaPasageri = new List<string>();
 
     public Masina(string marca, string numarDeInmatriculare, int capacitateaCilindrica)
     {
-        Marca = marca;
-        NumarDeInmatriculare = numarDeInmatriculare;
-        CapacitateCilindrica = capacitateaCilindrica;
+        this.marca = marca;
+        this.numarDeInmatriculare = numarDeInmatriculare;
+        this.capacitateCilindrica = capacitateaCilindrica;
     }
 
     public void AdaugaPasager(string pasager)
     {
-        ListaPasageri.Add(pasager);
-        
+        if (ExistaPasager(pasager)==false)
+        {
+            ListaPasageri.Add(pasager);
+        }
     }
 
     public void StergePasager(string pasager)
     {
-        if (ExistaPasager(pasager) != "")
+        if (ExistaPasager(pasager))
         {
             ListaPasageri.Remove(pasager);
         }
     }
 
-    public string ExistaPasager(string pasager)
+    public bool ExistaPasager(string pasager)
     {
-        if (ListaPasageri.IndexOf(pasager) == -1)
-        {
-            return "";
-        }
-        return pasager;
+        return ListaPasageri.Contains(pasager);
     }
 
     public string GetPasageri()
     {
-        string Result = "";
-        foreach (var item in ListaPasageri)
+        StringBuilder Result = new StringBuilder();
+        foreach (var pasager in ListaPasageri)
         {
-            Result += item + "\n";
+            Result.AppendLine(pasager);
         }
-        return Result;
+        return Result.ToString();
     }
 
-    public string GetDescription => $"{Marca} / {NumarDeInmatriculare} / {CapacitateCilindrica}";
+    public string GetDescription => $"{marca} / {numarDeInmatriculare} / {capacitateCilindrica}";
 }
