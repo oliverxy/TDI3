@@ -7,7 +7,7 @@ public class Masina
     private string NumarDeInmatriculare { get; set; }
     private int CapacitateCilindrica { get; set; }
 
-    private List<string> ListaPasageri { get; set; } = new List<string>();
+    private List<string> ListaPasageri = new List<string>();
 
     public Masina(string marca, string numarDeInmatriculare, int capacitateaCilindrica)
     {
