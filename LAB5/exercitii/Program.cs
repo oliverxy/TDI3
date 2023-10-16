@@ -16,4 +16,6 @@ Console.WriteLine(elev2.GetDescription());
 Console.WriteLine($"Medie elev : {elev2.GetMedia()}\n");
 Console.WriteLine(elev3.GetDescription());
 Console.WriteLine($"Medie elev : {elev3.GetMedia()}\n");
-Console.WriteLine($"Premiantul clasei este : {catalog.GetPremiantul().GetDescription()}");
+Elev premiant = catalog.GetPremiantul();
+Console.WriteLine($"Premiantul clasei este : {premiant.GetDescription()}");
+Console.WriteLine($"Avand media : {premiant.GetMedia()}\n");
