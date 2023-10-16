@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class CatalogScolar
+class CatalogScolar
 {
     private string nume { get; set; } = string.Empty;
     private List<Elev> Elevi = new List<Elev>();

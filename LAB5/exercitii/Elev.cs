@@ -6,24 +6,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Elev
+class Elev
 {
-    private string nume { get; set; } = string.Empty;
-    private string prenume { get; set; } = string.Empty;
-    private string nr_legitimatie { get; set; } = string.Empty;
-    private string cnp { get; } = string.Empty;
+    private string Nume { get; set; } = string.Empty;
+    private string Prenume { get; set; } = string.Empty;
+    private string Marca { get; set; } = string.Empty;
+    private string Cnp { get; } = string.Empty;
 
     private List<int> Note = new List<int>();
 
     public Elev(string nume, string prenume, string cnp)
     {
-        this.nume = nume;
-        this.prenume = prenume;
-        this.cnp = cnp;
+        this.Nume = nume;
+        this.Prenume = prenume;
+        this.Cnp = cnp;
     }
-    public Elev(string nume, string prenume, string cnp, string nr_legitimatie) : this(nume, prenume, cnp)
+    public Elev(string nume, string prenume, string cnp, string marca) : this(nume, prenume, cnp)
     {
-        this.nr_legitimatie = nr_legitimatie;
+        this.Marca = marca;
     }
     public void AdaugaNota(int nota)
     {
@@ -46,7 +46,7 @@ public class Elev
     public string GetDescription()
     {
         StringBuilder desc = new StringBuilder();
-        desc.AppendLine(($"{nume} {prenume}") );
+        desc.AppendLine(($"{Nume} {Prenume} {Marca}") );
         desc.Append(("Note : ") );
         foreach (var note in Note)
         {
