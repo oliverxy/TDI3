@@ -24,7 +24,7 @@ namespace exercitii
     {
         private int capacitate;
         private readonly TipMarfa tipMarfa;
-        public VagonMarfa(int capacitate, TipMarfa marfa) : base(seria, masa, anFabricatie)
+        public VagonMarfa(int capacitate, TipMarfa marfa)
         {
             this.capacitate = capacitate;
             this.tipMarfa = marfa;
