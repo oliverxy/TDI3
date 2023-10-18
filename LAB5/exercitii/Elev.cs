@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 
 class Elev
 {
-    private string Nume { get; set; } = string.Empty;
-    private string Prenume { get; set; } = string.Empty;
+    public string Nume { get; private set; } = string.Empty;
+    public string Prenume { get; private set; } = string.Empty;
     private string Marca { get; set; } = string.Empty;
     private string Cnp { get; } = string.Empty;
-
     private List<int> Note = new List<int>();
 
     public Elev(string nume, string prenume, string cnp)
@@ -29,31 +28,34 @@ class Elev
     {
         Note.Add(nota);
     }
-    public double GetMedia()
+    public double Media
     {
-        int nr = 0; 
-        double suma = 0;
-        foreach (var nota in Note)
+        get
         {
-            suma += nota;
-            nr++;
+            if (Note.Count == 0) return 0.00;
+            double suma = 0;
+            foreach (var nota in Note)
+            {
+                suma += nota;
+            }
+            return Math.Round(suma / Note.Count, 2);
         }
-        if (nr > 0) {
-            return Math.Round(suma / nr, 2);
-        }
-        return 0;
     }
-    public string GetDescription()
+    
+    public string Description
     {
-        StringBuilder desc = new StringBuilder();
-        desc.AppendLine(($"{Nume} {Prenume} {Marca}") );
-        desc.Append(("Note : ") );
-        foreach (var note in Note)
+        get
         {
-            desc.Append(note.ToString());
-            desc.Append(" ");
+            StringBuilder desc = new StringBuilder();
+            desc.AppendLine(($"{Nume} {Prenume} {Marca}"));
+            desc.Append(("Note : "));
+            foreach (var note in Note)
+            {
+                desc.Append(note.ToString());
+                desc.Append(" ");
+            }
+            //desc.AppendLine();
+            return desc.ToString();
         }
-        //desc.AppendLine();
-        return desc.ToString();
     }
 }

@@ -2,12 +2,13 @@
 {
     class Tren
     {
-        public string Nume { get; set; }
+        public string Nume { get; private set; }
         private List<VagonPersoane> Vagoane = new List<VagonPersoane>();
         private List<Locomotiva> Locomotive = new List<Locomotiva>();
-        public Tren(string nume)
+        public Tren(string nume, Locomotiva locomotiva)
         {
             this.Nume = nume;
+            this.Locomotive.Add(locomotiva);
         }
         public void AdaugaLocomotiva(Locomotiva locomotiva)
         {
@@ -29,10 +30,13 @@
         {
             foreach (var vagon in Vagoane)
             {
-                vagon.CloseDoors();
-                if (vagon is VagonPersoaneClasaI)
+                if (vagon is VagonPersoane)
                 {
-                    (vagon as VagonPersoaneClasaI).OpenAC();
+                    vagon.CloseDoors();
+                    if (vagon is VagonPersoaneClasaI)
+                    {
+                        (vagon as VagonPersoaneClasaI).OpenAC();
+                    }
                 }
             }
             foreach (var locomotiva in Locomotive)

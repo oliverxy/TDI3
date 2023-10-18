@@ -9,19 +9,22 @@ elev1.AdaugaNota( 7); elev1.AdaugaNota(10); elev1.AdaugaNota(10);
 elev2.AdaugaNota( 9); elev2.AdaugaNota(10); elev2.AdaugaNota(10);
 elev3.AdaugaNota( 7); elev3.AdaugaNota( 6); elev3.AdaugaNota( 8);
 
-var catalog = new CatalogScolar();
+var catalog = new CatalogScolar("Catalog1");
 catalog.AdaugaElev(elev1);
 catalog.AdaugaElev(elev2);
 catalog.AdaugaElev(elev3);
-Console.WriteLine(elev1.GetDescription());
-Console.WriteLine($"Medie elev : {elev1.GetMedia()}\n");
-Console.WriteLine(elev2.GetDescription());
-Console.WriteLine($"Medie elev : {elev2.GetMedia()}\n");
-Console.WriteLine(elev3.GetDescription());
-Console.WriteLine($"Medie elev : {elev3.GetMedia()}\n");
-var premiant = catalog.GetPremiantul();
-Console.WriteLine($"Premiantul clasei este : {premiant.GetDescription()}");
-Console.WriteLine($"Avand media : {premiant.GetMedia()}\n");
+Console.WriteLine(elev1.Description);
+Console.WriteLine($"Medie elev : {elev1.Media}\n");
+Console.WriteLine(elev2.Description);
+Console.WriteLine($"Medie elev : {elev2.Media}\n");
+Console.WriteLine(elev3.Description);
+Console.WriteLine($"Medie elev : {elev3.Media}\n");
+var premiant = catalog.Premiantul;
+if (premiant != null)
+{
+    Console.WriteLine($"Premiantul clasei este : {premiant.Description}");
+    Console.WriteLine($"Avand media : {premiant.Media}\n");
+}
 Console.WriteLine();
 Console.WriteLine();
 

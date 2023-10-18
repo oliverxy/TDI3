@@ -8,14 +8,14 @@ namespace exercitii
 {
     public class Locomotiva
     {
-        public string Name { get; set; }
-        private int Power { get; set; }
+        public string Name { get; private set; } = string.Empty;
+        public int PowerKw { get; private set; }
         public bool isStarted { get; private set; } = false;
 
         public Locomotiva(string name, int putere)
         {
             this.Name = name;
-            this.Power = putere;
+            this.PowerKw = putere;
         }
         public void Start() { this.isStarted = true; }
         public void Stop()  { this.isStarted = false; }
