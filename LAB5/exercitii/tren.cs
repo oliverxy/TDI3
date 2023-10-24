@@ -1,63 +1,77 @@
-﻿namespace exercitii
+﻿using System.Text;
+
+namespace exercitii
 {
     class Tren
     {
         public string Nume { get; private set; }
-        private List<VagonPersoane> Vagoane = new List<VagonPersoane>();
-        private List<Locomotiva> Locomotive = new List<Locomotiva>();
+        private List<Vagon> vagoane = new List<Vagon>();
+        private List<Locomotiva> locomotive = new List<Locomotiva>();
         public Tren(string nume, Locomotiva locomotiva)
         {
             this.Nume = nume;
-            this.Locomotive.Add(locomotiva);
+            this.locomotive.Add(locomotiva);
         }
         public void AdaugaLocomotiva(Locomotiva locomotiva)
         {
-            Locomotive.Add(locomotiva);
+            locomotive.Add(locomotiva);
         }
         public void StergeLocomotiva(Locomotiva locomotiva)
         {
-            Locomotive.Remove(locomotiva);
+            locomotive.Remove(locomotiva);
         }
         public void AdaugaVagon(VagonPersoane vagon)
         {
-            Vagoane.Add(vagon);
+            vagoane.Add(vagon);
         }
         public void StergeVagon(VagonPersoane vagon)
         {
-            Vagoane.Remove(vagon);
+            vagoane.Remove(vagon);
         }
-        public void Porneste()
+        public void PleacaDinGara()
         {
-            foreach (var vagon in Vagoane)
+            foreach (var vagon in vagoane)
             {
                 if (vagon is VagonPersoane)
                 {
-                    vagon.CloseDoors();
-                    if (vagon is VagonPersoaneClasaI)
-                    {
-                        (vagon as VagonPersoaneClasaI).OpenAC();
-                    }
+                   // (vagon as VagonPersoane).CloseDoors();
+                   // if (vagon is VagonPersoaneClasaI)
+                   // {
+                   //     (vagon as VagonPersoaneClasaI).OpenAC();
+                   // }
+                   vagon.PleacaDinGara();
                 }
             }
-            foreach (var locomotiva in Locomotive)
+            foreach (var locomotiva in locomotive)
             {
                 locomotiva.Start();
             }
         }
-        public void Opreste()
+        public void SosesteInGara()
         {
-            foreach (var locomotiva in Locomotive)
+            foreach (var locomotiva in locomotive)
             {
                 locomotiva.Stop();
             }
-            foreach (var vagon in Vagoane)
+            foreach (var vagon in vagoane)
             {
-                if (vagon is VagonPersoaneClasaI)
-                {
-                    (vagon as VagonPersoaneClasaI).CloseAC();
-                }
-                vagon.OpenDoors();
+                //if (vagon is VagonPersoaneClasaI)
+                //{
+                //    (vagon as VagonPersoaneClasaI).CloseAC();
+                //}
+                //(vagon as VagonPersoane).OpenDoors();
+                vagon.SosesteInGara();
             }
+        }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(Nume);
+            foreach (var vagon in vagoane)
+            {
+                sb.AppendLine(vagon.ToString());
+            }
+            return sb.ToString();
         }
     }
 }

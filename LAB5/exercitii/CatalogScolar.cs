@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 class CatalogScolar
 {
-    public string Nume { get; private set; } = string.Empty;
+    public string numeClasa ;
     private List<Elev> Elevi = new List<Elev>();
 
     public CatalogScolar(string nume) 
     { 
-        this.Nume = nume;
+        this.numeClasa = nume;
     }  
     public void AdaugaElev(Elev elev)
     {

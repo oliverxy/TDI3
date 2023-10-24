@@ -39,13 +39,11 @@ if (locomotiva1.isStarted == false)
 {
     Console.WriteLine($"Locomotiva {locomotiva1.Name} s-a oprit !");
 }
-var vagon1 = new VagonPersoaneClasaI(52);
-var vagon2 = new VagonPersoane(52);
-var vagon3 = new VagonPersoane(52);
-var tren = new Tren("TREN 1");
+var tren = new Tren("TREN 1",locomotiva1);
 tren.AdaugaLocomotiva(locomotiva1);
-tren.AdaugaVagon(vagon1);
-tren.AdaugaVagon(vagon2);
-tren.AdaugaVagon(vagon3);
-tren.Porneste();
-tren.Opreste();
+tren.AdaugaVagon(new VagonPersoaneClasaI("1",100,1990,52));
+tren.AdaugaVagon(new VagonPersoane("2", 100, 1990, 52));
+tren.AdaugaVagon(new VagonPersoane("3", 100, 1990, 52));
+tren.AdaugaVagon(new VagonCuseta("4", 100, 1990, 12));
+tren.PleacaDinGara();
+tren.SosesteInGara();
