@@ -10,14 +10,18 @@
             this.rataDobanzii = rataDobanzii;
         }
 
-        public override bool DepunereNumerar(double sumaDepusa)
+        public override void RetragereNumerar(double sumaDepusa)
         {
-            if (base.DepunereNumerar(sumaDepusa))
+            try
             {
+                base.RetragereNumerar(sumaDepusa);
                 sold *= 1+rataDobanzii;
-                return true;
             }
-            return false;
+            catch (InsufficientFundsException ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            
         }
     }
 }
