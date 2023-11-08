@@ -1,5 +1,5 @@
 ﻿using POS.Interfaces;
-//using Banci;
+using Banci;
 namespace PoS
 {
     class Pos:IPos
