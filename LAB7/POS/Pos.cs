@@ -1,10 +1,33 @@
 ﻿using POS.Interfaces;
-
+//using Banci;
 namespace PoS
 {
     class Pos:IPos
     {
         private double sumaDePlata;
+        private void Connect()
+        {
+            try
+            {
+                //Banci.Banca.Connect();
+            }
+            catch
+            {
+                try
+                {
+                    //Banci.Banca.Connect();
+                }
+                catch 
+                {
+                    throw new BankConnectException("Eroare conectare la banca !");
+                }
+            }
+        }
+        private void Disconnect()
+        {
+            //Banci.Banca.Disconnect();
+        }
+
         public void IntroduSumaDePlata(double suma) 
         { 
             this.sumaDePlata = suma;
