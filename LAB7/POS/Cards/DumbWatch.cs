@@ -11,19 +11,7 @@ namespace POS.Cards
     {
         private SmartPhone phone;
         public void AddPhone(SmartPhone phone) { this.phone = phone; }
-        public void Apropie()
-        {
-            Console.WriteLine("Apropiem ceasul dumb");
-        }
-
-        public string GetCardData()
-        {
-            if (phone != null)
-            {
-                return phone.GetCardData();
-
-            }
-            return string.Empty;
-        }
+        public void Apropie() => Console.WriteLine("Apropiem ceasul dumb");
+        public string GetCardData() => phone == null ? string.Empty : phone.GetCardData();
     }
 }

@@ -9,9 +9,6 @@ namespace POS.Cards
 {
     class ContactlessCard : ClassicCard, IContactlessPay
     {
-        public void Apropie()
-        {
-            Console.WriteLine("Cardul a fost apropiat.");
-        }
+        public void Apropie() => Console.WriteLine("Cardul a fost apropiat.");
     }
 }

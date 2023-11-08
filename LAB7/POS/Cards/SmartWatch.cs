@@ -10,14 +10,7 @@ namespace POS.Cards
     class SmartWatch : IContactlessPay
     {
         private Guid cardData = Guid.NewGuid();
-        public void Apropie()
-        {
-            Console.WriteLine("Apropie ceasul");
-        }
-
-        public string GetCardData()
-        {
-            return cardData.ToString();
-        }
+        public void Apropie() => Console.WriteLine("Apropie ceasul");
+        public string GetCardData() => cardData.ToString();
     }
 }

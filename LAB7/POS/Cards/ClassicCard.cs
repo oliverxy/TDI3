@@ -10,22 +10,9 @@ namespace POS.Cards
     public class ClassicCard : IContactfullPay
     {
         private Guid cardData = Guid.NewGuid();
-        
-        public void ExtrageCard()
-        {
-            Console.WriteLine("Extrage cardul");
-        }
-
-        public string GetCardData()
-        {
-            return cardData.ToString();
-        }
-
-        public void IntroduCard()
-        {
-            Console.WriteLine("Extrage cardul");
-
-        }
+        public void ExtrageCard() => Console.WriteLine("Extrage cardul");
+        public string GetCardData() => cardData.ToString();
+        public void IntroduCard() => Console.WriteLine("Extrage cardul");
     }
 
 }
