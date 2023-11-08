@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace POS.Cards
 {
-    class SmartWatch : IContactlessPay
+    public class SmartWatch : IContactlessPay
     {
-        private Guid cardData = Guid.NewGuid();
+        private Guid id = Guid.NewGuid();
         public void Apropie() => Console.WriteLine("Apropie ceasul");
-        public string GetCardData() => cardData.ToString();
+        public Guid GetCardData() => id;
     }
 }

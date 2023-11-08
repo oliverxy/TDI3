@@ -9,6 +9,6 @@ namespace POS.Interfaces
     public interface IContactlessPay
     {
         public void Apropie();
-        public string GetCardData();
+        public Guid GetCardData();
     }
 }

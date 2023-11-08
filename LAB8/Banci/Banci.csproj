@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\LAB6\ConturiBancare\Conturi.csproj" />
+    <ProjectReference Include="..\..\LAB7\POS\POS.csproj" />
   </ItemGroup>
 
 </Project>

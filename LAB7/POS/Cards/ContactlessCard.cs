@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace POS.Cards
 {
-    class ContactlessCard : ClassicCard, IContactlessPay
+    public class ContactlessCard : ClassicCard, IContactlessPay
     {
         public void Apropie() => Console.WriteLine("Cardul a fost apropiat.");
     }

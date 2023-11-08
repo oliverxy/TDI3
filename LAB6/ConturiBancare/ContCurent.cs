@@ -1,6 +1,6 @@
 ﻿namespace Conturi
 {
-    class ContCurent : Cont
+    public class ContCurent : Cont
     {
         private const double PlafonDescoperireSold = 5000.0;
 

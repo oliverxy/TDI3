@@ -3,11 +3,11 @@ using System;
 
 namespace POS.Cards
 {
-    class SmartPhone : IContactlessPay
+    public class SmartPhone : IContactlessPay
     {
-        private Guid phoneId = Guid.NewGuid();
+        private Guid id = Guid.NewGuid();
         public void Apropie() => Console.WriteLine("Apropie telefonul");
-        public string GetCardData() => $"phone id : {phoneId}";
+        public Guid GetCardData() => id;
 
     }
 }

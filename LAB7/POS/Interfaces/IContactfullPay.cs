@@ -9,7 +9,7 @@ namespace POS.Interfaces
     public interface IContactfullPay
     {
         public void IntroduCard();
-        public string GetCardData();
+        public Guid GetCardData();
         public void ExtrageCard();
 
     } 

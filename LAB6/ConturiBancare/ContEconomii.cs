@@ -1,6 +1,6 @@
 ﻿namespace Conturi
 {
-    class ContEconomii : Cont
+    public class ContEconomii : Cont
     {
         private double rataDobanzii;
         private const double PlafonDescoperireSold = 0.0;

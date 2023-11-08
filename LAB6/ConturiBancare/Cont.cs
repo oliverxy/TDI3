@@ -1,11 +1,22 @@
-﻿namespace Conturi
+﻿using Conturi.Interfaces;
+
+namespace Conturi
 {
-    abstract class Cont
+    public class Cont : ICont
     {
         private string nume;
         private readonly double plafonDescoperireSold;
         protected double sold;
-        private Guid id;
+        private readonly Guid id;
+
+        public Guid GetId()
+        {
+            return id;
+        }
+        public string GetNume()
+        {
+            return nume;
+        }
 
         public Cont(string nume, double plafonDescoperireSold)
         {
@@ -14,15 +25,16 @@
             this.plafonDescoperireSold = plafonDescoperireSold;
         }
 
-        public virtual bool DepunereNumerar(double sumaDepusa)
+        public virtual void DepunereNumerar(double sumaDepusa)
         {
             if (sumaDepusa < 0)
             {
-                Console.WriteLine("Suma invalida");
-                return false;
+                throw new InsufficientFundsException("Suma invalida !");
+                //Console.WriteLine("Suma invalida");
+                //return false;
             }
             sold += sumaDepusa;
-            return true;
+            //return true;
         }
 
         public virtual void RetragereNumerar(double sumaRetrasa)
@@ -43,7 +55,8 @@
 
         public override string ToString()
         {
-            return $"{nume}-{id} : {sold}$";
+            return $"{nume}-{GetId()} : {sold}$";
         }
+
     }
 }

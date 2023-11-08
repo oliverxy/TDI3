@@ -2,13 +2,11 @@
 {
     public class Banca 
     {
-        Dictionary<Guid, CardBancar> carduriBanca = new Dictionary<Guid, CardBancar>();
+        Dictionary<Guid, Guid> carduriBanca = new Dictionary<Guid, Guid>();
         Dictionary<Guid, string> conturiBanca = new Dictionary<Guid, string>();
 
         public static int NrConturi { get; private set; }
         public static int NrConexiuni { get; private set; }
-
-        //  List<CardBancar> carduri = new List<CardBancar>();
 
         public Banca()
         {
@@ -22,8 +20,8 @@
                 throw new CardException("Prea multe conturi deschise.");
             }
             var cont = new Conturi.Cont(nume, plafon);
-            conturiBanca.Add(cont.id, cont.nume);
-            return cont.id;
+            conturiBanca.Add(cont.GetId(), cont.GetNume());
+            return cont.GetId();
         }
 
         public void EmiteCard(Guid contId)
@@ -37,15 +35,19 @@
                 throw new CardException("Prea multe carduri.");
 
             }
-            var card = new CardBancar();
-            carduriBanca.Add(card.GetCardData, card);
+            var card = new POS.Cards.ContactlessCard();
+            carduriBanca.Add(card.GetCardData(),contId);
         }
 
-        public void Plateste (Guid contId, double suma)
+        public void Plateste (Guid idCard, double suma)
         {
-            if (!conturiBanca.ContainsKey(contId))
+            if (!carduriBanca.ContainsKey(idCard))
             {
-                throw new CardException("Contul nu exista.");
+                throw new CardException("Cardul nu exista.");
+            }
+            if (carduriBanca[idCard]==Guid.Empty)
+            {
+                throw new CardException("Cardul nu are cont asociat.");
             }
             // ???RetragerNumerar(suma)
         }

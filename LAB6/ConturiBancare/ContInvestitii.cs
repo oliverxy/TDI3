@@ -1,6 +1,6 @@
 ﻿namespace Conturi
 {
-    class ContInvestitii : ContEconomii
+    public class ContInvestitii : ContEconomii
     {
         private int ziuaExtragerii;
         public ContInvestitii(string nume, double rataDobanzii, int ziuaExtragerii) : base(nume, rataDobanzii)
