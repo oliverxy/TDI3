@@ -3,7 +3,6 @@ using System.Data.Entity.Infrastructure;
 using System.Xml.Linq;
 
 using var dbStudent = new StudentsDbContext();
-using var dbSpec = new StudentsDbContext();
 
 
 //Seed();
@@ -12,7 +11,7 @@ var lista = dbStudent.Students.OrderBy(s => s.Nume).ToList();
 lista.ForEach(s => Console.WriteLine(s));
 Console.WriteLine();
 
-var dd = dbSpec.Specializari.Where(s => s.Nume == "Constructii").Select(s => s.Id).FirstOrDefault();
+var dd = dbStudent.Specializari.Where(s => s.Nume == "Constructii").Select(s => s.Id).FirstOrDefault();
 lista = dbStudent.Students.Where(s => s.SpecializareId == dd && s.Varsta > 20).ToList();
 lista.ForEach(s => Console.WriteLine(s));
 Console.WriteLine();
@@ -32,7 +31,7 @@ lista1.ForEach(s => {
 Console.ReadLine();
 
 //TODO: NU AR TREBUI SA STEARGA SI ANGAJATUL
-//dbSpec.Specializari.Where(x => x.Id == 2).ExecuteDelete();
+dbStudent.Specializari.Where(x => x.Id == 2).ExecuteDelete();
 
 
 
@@ -40,56 +39,55 @@ Console.ReadLine();
 static void Seed()
 {
     using var dbStudents = new StudentsDbContext();
-    using var dbSpec = new StudentsDbContext();
-    var dd = dbSpec.Specializari.Where(s => s.Nume == "Litere").Select(s => s.Id).FirstOrDefault();
-    dbSpec.Add(new Specializare
+    var dd = dbStudents.Specializari.Where(s => s.Nume == "Litere").Select(s => s.Id).FirstOrDefault();
+    dbStudents.Add(new Specializare
     {
         Nume = "Litere"
     });
-    dbSpec.Add(new Specializare
+    dbStudents.Add(new Specializare
     {
         Nume = "Constructii"
     });
-    dbSpec.Add(new Specializare
+    dbStudents.Add(new Specializare
     {
         Nume = "Informatica"
     });
-    dbSpec.SaveChanges();
-    dbSpec.Specializari.Where(s => s.Nume == "Litere");
+    dbStudents.SaveChanges();
+    dbStudents.Specializari.Where(s => s.Nume == "Litere");
 
     dbStudents.Add(new Student { 
         Nume = "Popescu",
         Prenume = "Ana",
         Varsta = 20,
-        SpecializareId = dbSpec.Specializari.Where(s => s.Nume == "Litere").Select(s => s.Id).FirstOrDefault()
+        SpecializareId = dbStudents.Specializari.Where(s => s.Nume == "Litere").Select(s => s.Id).FirstOrDefault()
     });
     dbStudents.Students.Add(new Student
     {
         Nume = "Popescu",
         Prenume = "Ion",
         Varsta = 23,
-        SpecializareId = dbSpec.Specializari.Where(s => s.Nume == "Constructii").Select(s => s.Id).FirstOrDefault()
+        SpecializareId = dbStudents.Specializari.Where(s => s.Nume == "Constructii").Select(s => s.Id).FirstOrDefault()
     });
     dbStudents.Students.Add(new Student
     {
         Nume = "Ionescu",
         Prenume = "Mirela",
         Varsta = 21,
-        SpecializareId = dbSpec.Specializari.Where(s => s.Nume == "Informatica").Select(s => s.Id).FirstOrDefault()
+        SpecializareId = dbStudents.Specializari.Where(s => s.Nume == "Informatica").Select(s => s.Id).FirstOrDefault()
     });
     dbStudents.Students.Add(new Student
     {
         Nume = "Ionescu",
         Prenume = "Florina",
         Varsta = 22,
-        SpecializareId = dbSpec.Specializari.Where(s => s.Nume == "Constructii").Select(s => s.Id).FirstOrDefault()
+        SpecializareId = dbStudents.Specializari.Where(s => s.Nume == "Constructii").Select(s => s.Id).FirstOrDefault()
     });
     dbStudents.Students.Add(new Student
     {
         Nume = "Tomescu",
         Prenume = "Nelu",
         Varsta = 25,
-        SpecializareId = dbSpec.Specializari.Where(s => s.Nume == "Constructii").Select(s => s.Id).FirstOrDefault()
+        SpecializareId = dbStudents.Specializari.Where(s => s.Nume == "Constructii").Select(s => s.Id).FirstOrDefault()
     });
 
 
