@@ -49,12 +49,13 @@
             {
                 throw new CardException("Cardul nu are cont asociat.");
             }
+
             // ???RetragerNumerar(suma)
         }
 
         public void Connect()
         {
-            if (NrConexiuni > 3)
+            if (NrConexiuni > 3)          
             {
                 throw new ConnectionsException("Prea multe conexiuni");
             }

@@ -5,7 +5,7 @@ namespace PoS
     class Pos:IPos
     {
         private double sumaDePlata;
-        private void Connect()
+        private   Connect()
         {
             try
             {
@@ -28,7 +28,7 @@ namespace PoS
             //Banci.Banca.Disconnect();
         }
 
-        public void IntroduSumaDePlata(double suma) 
+        public                                         void IntroduSumaDePlata(double suma) 
         { 
             this.sumaDePlata = suma;
             Console.WriteLine($"Am incarcat suma de plata {suma}");
